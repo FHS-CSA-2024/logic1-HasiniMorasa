@@ -142,6 +142,15 @@ public class Logic1
 	sortaSum(9, 4) --> 20
 	sortaSum(10, 11) --> 21*/
 	public int sortaSum(int a, int b) {
+		 public int sortaSum(int a, int b) {
+        int sum = a + b;
+         if(sum >= 10 && sum <= 19){
+          sum = 20;
+    
+        }
+        return sum;
+      
+    }
 	  
 	}
 
@@ -166,9 +175,16 @@ public class Logic1
 	teenSum(3, 4) --> 7
 	teenSum(10, 13) --> 19
 	teenSum(13, 2) --> 19 */
-	public int teenSum(int a, int b) {
-	  
-	}
+public int sortaSum(int a, int b) {
+        int sum = a + b;
+         if(sum >= 10 && sum <= 19){
+          sum = 20;
+    
+        }
+        return sum;
+      
+    }
+
 
 
 	/*The number 6 is a truly great number. Given two int values, a and b, 
@@ -180,8 +196,25 @@ public class Logic1
 	love6(4, 5) --> false
 	love6(1, 5) --> true */
 	public boolean love6(int a, int b) {
+		public boolean love6(int a, int b) {
+        int sum = a + b;
+        int dif = a - b;
+        if(a == 6|| b == 6 || sum == 6 || dif == 6){
+            
+            return true;
+        }
+         else{ 
+                
+            return false;
+            
+            
+        }
+    
+        
+      
+    }
 	  
-	}
+	
 
 
 	/*Given three ints, a b c, return true if two or more of them have the same rightmost digit. 
