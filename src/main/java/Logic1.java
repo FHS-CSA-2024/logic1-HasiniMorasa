@@ -83,9 +83,13 @@ public class Logic1
 	old35(3) --> true
 	old35(10) --> true
 	old35(15) --> false */
-	public boolean old35(int n) {
-	
-	}
+	 public boolean old35(int n) {
+        if( n % 3 == 0 || n % 5 == 0)
+        return true;
+        else
+        return false;
+    }
+
 
 
 	/*We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11. 
@@ -96,8 +100,13 @@ public class Logic1
 	specialEleven(23) --> true
 	specialEleven(24) --> false */
 	public boolean specialEleven(int n) {
-	  
-	}
+
+      if( n % 11== 0 || n % 11 == 1) 
+        return true;
+        else
+        return false;
+}
+	
 
 
 	/*Return true if the given non-negative number is 1 or 2 more than a multiple of 20.
@@ -106,6 +115,14 @@ public class Logic1
 	more20(21) --> true
 	more20(42) --> true */
 	public boolean more20(int n) {
+	if( n % 20 == 2 || n % 20 == 1)
+      {
+       return true;
+        }
+        else
+        {
+        return false;
+        }  
 	  
 	}
 
@@ -118,8 +135,15 @@ public class Logic1
 	less20(59) --> true
 	less20(20) --> false */
 	public boolean less20(int n) {
+ if (n % 20 == 18 || n % 20 == 19) {
+      return true; 
+    }
+      else { 
+        return false;  
+        }
+    }
+
 	  
-	}
 
 	/*Given a non-negative number "num", return true if num is within 2 of a multiple of 10. 
 	Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2.
@@ -128,9 +152,17 @@ public class Logic1
 	nearTen(12) --> true
 	nearTen(17) --> false
 	nearTen(19) --> true */
-	public boolean nearTen(int num) {
-	  
-	}
+	public boolean nearTen(int n ) {
+        
+         if (n % 10 <= 2 || n % 10 >= 8 ) {
+      return true; 
+    }
+      else { 
+        return false;  
+        }
+      
+    }
+
 
 
 	/*Given 2 ints, a and b, return their sum. 
@@ -142,17 +174,17 @@ public class Logic1
 	sortaSum(9, 4) --> 20
 	sortaSum(10, 11) --> 21*/
 	public int sortaSum(int a, int b) {
-		 public int sortaSum(int a, int b) {
-        int sum = a + b;
+	   int sum = a + b;
          if(sum >= 10 && sum <= 19){
           sum = 20;
-    
+            return sum;
         }
+        else
+        {
         return sum;
+        }
       
     }
-	  
-	}
 
 
 	/*Given a number n, return true if n is in the range 1..10, inclusive. 
@@ -164,6 +196,13 @@ public class Logic1
 	in1To10(11, false) --> false
 	in1To10(11, true) --> true */
 	public boolean in1To10(int n, boolean outsideMode) {
+	if(n >= 1 && n <= 10){
+            return true;
+         }
+        if(outsideMode = true && (n <= 1 && n >= 10)){ 
+            return true;
+      }
+     return false; 
 	  
 	}
 
@@ -179,12 +218,14 @@ public int sortaSum(int a, int b) {
         int sum = a + b;
          if(sum >= 10 && sum <= 19){
           sum = 20;
-    
+            return sum;
         }
+        else
+        {
         return sum;
+        }
       
     }
-
 
 
 	/*The number 6 is a truly great number. Given two int values, a and b, 
@@ -226,8 +267,17 @@ public int sortaSum(int a, int b) {
 	lastDigit(23, 19, 12) --> false
 	lastDigit(23, 19, 3) --> true */
 	public boolean lastDigit(int a, int b, int c) {
-	  
-	}
+      int modA = a % 10;
+      int modB = b % 10;
+      int modC = c % 10;
+      if( modA == modB || modB == modC || modC == modA){
+        return true;
+        }
+      else{
+          return false;
+      }
+    }
+
 
 
 	/*Your cell phone rings. Return true if you should answer it. 
@@ -239,8 +289,21 @@ public int sortaSum(int a, int b) {
 	answerCell(false, false, true) --> false
 	answerCell(true, false, false) --> false */
 	public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-	  
-	}
+       boolean answerCellVal = false;
+      if (isAsleep == true){
+      answerCellVal = false;
+    }
+      else if ( isMorning == true && isMom == true ){
+        answerCellVal = true;
+    }
+    else if ( isMorning == false ){
+        
+     answerCellVal = false;
+          
+      }
+      return answerCellVal;
+    }
+    
 
 	/*Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, 
 		and a boolean indicating if we are on vacation, 
@@ -253,8 +316,32 @@ public int sortaSum(int a, int b) {
 	alarmClock(5, false) --> "7:00"
 	alarmClock(0, false) --> "10:00" */
 	public String alarmClock(int day, boolean vacation) {
-	  
-	}
+         String alarm="";
+      if (vacation == true && day == 6){
+         
+          alarm = "off";
+        }
+      else if (vacation == true && day == 0){
+          alarm = "off";
+        }
+      else if (vacation == true && day >= 1 && day < 6){
+          alarm = "10.00";
+        
+      }
+       
+       else if (vacation == false && (day == 0 || day == 6)){
+          alarm = "10.00";
+        
+      }
+      
+      else if (vacation == false && (day >= 1 && day < 6) ){
+          alarm = "7.00";
+        
+      }
+      return alarm ;
+          
+      }
+    
 
 
 	/*We are having a party with amounts of tea and candy. 
@@ -268,9 +355,18 @@ public int sortaSum(int a, int b) {
 	teaParty(3, 8) --> 0
 	teaParty(20, 6) --> 2 */
 	public int teaParty(int tea, int candy) {
-	  
-	}
-
+        int teaPartyVal = 0;
+       if ( tea >= 5 && candy >= 5){ 
+           teaPartyVal = 1;
+        }
+       if ( tea >= candy * 2 || candy >= tea * 2){
+           teaPartyVal = 2;
+       }
+       if( tea < 5 || candy < 5){
+           teaPartyVal = 0;
+        }
+        return teaPartyVal;
+    }
 
 	/*You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, or 2. 
 	If they are all the value 2, the result is 10. 
@@ -282,9 +378,23 @@ public int sortaSum(int a, int b) {
 	redTicket(2, 2, 2) --> 10
 	redTicket(2, 2, 1) --> 0
 	redTicket(0, 0, 0) --> 5 */
-	public int redTicket(int a, int b, int c) {
-	  
-	}
+	   public int redTicket(int a, int b, int c) {
+        if ( a == 2 && b == 2 && c == 2){ 
+            return 10;
+        
+        }else if( a == b && b == c && c == a){
+        
+            return 5;
+        }else if( b != a && c != a){
+            return 1;
+        }
+         else{ 
+            return 0;
+        
+        }
+      
+    }
+
 
 
 	/*You have a green lottery ticket, with ints a, b, and c on it. 
@@ -297,8 +407,21 @@ public int sortaSum(int a, int b) {
 	greenTicket(2, 2, 2) --> 20
 	greenTicket(1, 1, 2) --> 10 */
 	public int greenTicket(int a, int b, int c) {
+		public int greenTicket(int a, int b, int c) {
+        int returnVal = 0;
+        if (a != b && b != c && c != a) { // All numbers are the same
+        returnVal = 0;
+    }
+    else if( a == b && b == c && a ==c ){ 
+        returnVal = 20;
+    }
+    else if( (b == a && c == a) || ( a==c && b==a) ){ 
+        returnVal = 10;
+    }
+    return returnVal;
+}
 	  
-	}
+	
 
 
 	/*
@@ -313,6 +436,14 @@ public int sortaSum(int a, int b) {
 	squirrelPlay(95, false) --> false
 	squirrelPlay(95, true) --> true	*/
 	public boolean squirrelPlay(int temp, boolean isSummer) {
+		   boolean squirrelPlay = false;
+	    if(isSummer == false && temp >= 60 && temp <= 90){
+	     squirrelPlay = true;
+     }
+     else if( isSummer == true && temp >= 60 && temp <= 90){
+         squirrelPlay = true;
+     }
+       return squirrelPlay;
   
 	}
 
@@ -330,6 +461,24 @@ public int sortaSum(int a, int b) {
 	caughtSpeeding(65, false) --> 1
 	caughtSpeeding(65, true) --> 0	*/
 	public int caughtSpeeding(int speed, boolean isBirthday) {
+		public int caughtSpeeding(int speed, boolean isBirthday) {
+	    int speedTicket = 0;
+	    if ( speed <= 60){
+	    speedTicket = 0;
+            }
+            else if (speed >= 61 && speed <= 80){ 
+            speedTicket = 1;
+            }
+            else if (speed >= 81){
+            speedTicket = 2;
+        }
+            else if(isBirthday == true){
+            speed -= 5;
+        }
+        return speedTicket;
+            
+	  
+	}
 	  
 	}
 
@@ -347,6 +496,14 @@ public int sortaSum(int a, int b) {
 	dateFashion(5, 2) --> 0
 	dateFashion(5, 5) --> 1	*/
 	public int dateFashion(int you, int date) {
+		  int styleRating = 1;
+	   if( date1 >= 8 || date2 >= 8){
+	       styleRating = 2;
+    }
+       else if( date1 <= 2 || date2 <= 2) { 
+           styleRating = 0;
+        }
+        return styleRating;
 	  
 	}
 	
@@ -362,8 +519,21 @@ public int sortaSum(int a, int b) {
 	fizzString2(3) --> "Fizz!"
 	fizzString2(15) --> "FizzBuzz!"*/
 	public String fizzString2(int n) {
+        public String fizzString2(int n) {
+	    String fizzString = "";
+	    if(n % 3 == 0){
+	       fizzString = "Fizz";
+     }
+         else if( n % 5 == 0){ 
+              fizzString = "Buzz";
+            }
+        else if( n % 3 == 0 && n % 5 == 0){ 
+            fizzString = "FizzBuzz";
+        }
+	    return fizzString;
   
 	}
+	
 
 	/*When squirrels get together for a party, they like to have sodas. 
 	A squirrel party is successful when the number of sodas is between 40 and 60, inclusive. 
@@ -375,7 +545,16 @@ public int sortaSum(int a, int b) {
 	sodaParty(50, false) --> true
 	sodaParty(70, true) --> true */
 	public boolean sodaParty(int sodas, boolean isWeekend) {
-  
+	    boolean sodaParty = false;
+	    if( sodas >= 40 && sodas <= 60){
+	        sodaParty = true;
+     }
+       if(isWeekend == true && sodas >= 40){
+           sodaParty = true;
+    
 	}
+
+       return sodaParty;
+   }
 
 }
