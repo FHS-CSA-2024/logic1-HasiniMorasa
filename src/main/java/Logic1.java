@@ -194,7 +194,7 @@ public class Logic1
     teenSum(3, 4) --> 7
     teenSum(10, 13) --> 19
     teenSum(13, 2) --> 19 */
-    public int sortaSum(int a, int b) {
+    public int teenSum(int a, int b) {
         int sum = a + b;
         if(sum >= 10 && sum <= 19){
             sum = 20;
@@ -215,7 +215,6 @@ public class Logic1
     love6(4, 5) --> false
     love6(1, 5) --> true */
     public boolean love6(int a, int b) {
-        public boolean love6(int a, int b) {
         int sum = a + b;
         int dif = a - b;
         if(a == 6|| b == 6 || sum == 6 || dif == 6){
@@ -366,7 +365,6 @@ public class Logic1
     greenTicket(2, 2, 2) --> 20
     greenTicket(1, 1, 2) --> 10 */
     public int greenTicket(int a, int b, int c) {
-        public int greenTicket(int a, int b, int c) {
         int returnVal = 0;
         if (a != b && b != c && c != a) { // All numbers are the same
             returnVal = 0;
@@ -414,7 +412,6 @@ public class Logic1
     caughtSpeeding(65, false) --> 1
     caughtSpeeding(65, true) --> 0	*/
     public int caughtSpeeding(int speed, boolean isBirthday) {
-        public int caughtSpeeding(int speed, boolean isBirthday) {
         int speedTicket = 0;
         if ( speed <= 60){
             speedTicket = 0;
@@ -446,12 +443,12 @@ public class Logic1
     dateFashion(5, 5) --> 1	*/
     public int dateFashion(int you, int date) {
         int styleRating = 1;
-        if( date1 >= 8 || date2 >= 8){
-            styleRating = 2;
-        }
-        else if( date1 <= 2 || date2 <= 2) { 
-            styleRating = 0;
-        }
+        //if( date1 >= 8 || date2 >= 8){
+        //    styleRating = 2;
+        //}
+        //else if( date1 <= 2 || date2 <= 2) { 
+        //    styleRating = 0;
+        //}
         return styleRating;
 
     }
