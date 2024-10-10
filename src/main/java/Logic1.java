@@ -6,9 +6,9 @@ public class Logic1
     public static void main(String[] args){
         Logic1 logicDriver = new Logic1();
         //All test cases;
-        /*System.out.println(logicDriver.old35(3));
+       // System.out.println(logicDriver.old35(3));
         //System.out.println(logicDriver.old35(10));
-        System.out.println(logicDriver.old35(15));
+        /*System.out.println(logicDriver.old35(15));
         System.out.println(logicDriver.specialEleven(22));
         System.out.println(logicDriver.specialEleven(23));
         System.out.println(logicDriver.specialEleven(24));
@@ -38,12 +38,12 @@ public class Logic1
         System.out.println(logicDriver.lastDigit(23, 19, 3));
         System.out.println(logicDriver.answerCell(false, false, false));
         System.out.println(logicDriver.answerCell(false, false, true));
-        System.out.println(logicDriver.answerCell(true, false, false)); 
+        System.out.println(logicDriver.answerCell(true, false, false)); */ 
         System.out.println(logicDriver.alarmClock(1, false));
         System.out.println(logicDriver.alarmClock(5, false));
         System.out.println(logicDriver.alarmClock(0, false));
        
-        System.out.println(logicDriver.teaParty(6, 8));
+        /*System.out.println(logicDriver.teaParty(6, 8));
         System.out.println(logicDriver.teaParty(3, 8));
         System.out.println(logicDriver.teaParty(20, 6));
         System.out.println(logicDriver.redTicket(2, 2, 2));
@@ -54,11 +54,11 @@ public class Logic1
         System.out.println(logicDriver.greenTicket(1, 1, 2)); 
         System.out.println(logicDriver.squirrelPlay(70, false));
         System.out.println(logicDriver.squirrelPlay(95, false));
-        System.out.println(logicDriver.squirrelPlay(95, true)); */
+        System.out.println(logicDriver.squirrelPlay(95, true)); 
         System.out.println(logicDriver.caughtSpeeding(60, false));
         System.out.println(logicDriver.caughtSpeeding(65, false));
-        System.out.println(logicDriver.caughtSpeeding(65, true)); 
-       /* System.out.println(logicDriver.dateFashion(5, 10));
+        System.out.println(logicDriver.caughtSpeeding(65, true));  
+        System.out.println(logicDriver.dateFashion(5, 10));
         System.out.println(logicDriver.dateFashion(5, 2));
         System.out.println(logicDriver.dateFashion(5, 5));
         System.out.println(logicDriver.fizzString2(1));
@@ -67,7 +67,7 @@ public class Logic1
         System.out.println(logicDriver.fizzString2(15));
         System.out.println(logicDriver.sodaParty(30, false));
         System.out.println(logicDriver.sodaParty(50, false));
-        System.out.println(logicDriver.sodaParty(70, true)); 
+        System.out.println(logicDriver.sodaParty(70, true));* 
     }
 
     public Logic1()
@@ -311,29 +311,23 @@ public class Logic1
     alarmClock(0, false) --> "10:00" */
     public String alarmClock(int day, boolean vacation) {
          String alarm="";
-      if (vacation == true && day == 6){
-         
-          alarm = "off";
-        }
-      else if (vacation == true && day == 0){
-          alarm = "off";
-        }
-      else if (vacation == true && day >= 1 && day < 6){
-          alarm = "10.00";
-        
-      }
-       
-       else if (vacation == false && (day == 0 || day == 6)){
-          alarm = "10.00";
-        
-      }
       
-      else if (vacation == false && (day >= 1 && day < 6) ){
-          alarm = "7.00";
-        
-      }
-      return alarm ;
-          
+             if( (day > 0 &&  day < 6) && vacation == false){
+             alarm ="7:00";
+            }
+             else if( (day == 0 || day == 6) && vacation == false){
+            alarm = "10.00";   
+             }
+            else if( (day > 0 && day < 6)&& vacation == true){
+            alarm = "10.00";   
+             }
+             
+             else if( (day == 0 || day == 6)&& vacation == true){
+            alarm = "off";   
+             }
+             
+                          
+          return alarm;
       }
     
      
@@ -527,10 +521,10 @@ public class Logic1
     fizzString2(15) --> "FizzBuzz!"*/
     public String fizzString2(int n) {
         String fizzString = n + "!";
-        if(n % 3 == 0){
+        if(n % 3 == 0 &&  n % 5 != 0){
            fizzString = "Fizz";
      }
-         else if( n % 5 == 0){ 
+         else if(n % 3 != 0 && n % 5 == 0){ 
               fizzString = "Buzz";
             }
         else if( n % 3 == 0 && n % 5 == 0){ 
