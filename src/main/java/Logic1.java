@@ -316,10 +316,10 @@ public class Logic1
              alarm ="7:00";
             }
              else if( (day == 0 || day == 6) && vacation == false){
-            alarm = "10.00";   
+            alarm = "10:00";   
              }
             else if( (day > 0 && day < 6)&& vacation == true){
-            alarm = "10.00";   
+            alarm = "10:00";   
              }
              
              else if( (day == 0 || day == 6)&& vacation == true){
@@ -522,13 +522,13 @@ public class Logic1
     public String fizzString2(int n) {
         String fizzString = n + "!";
         if(n % 3 == 0 &&  n % 5 != 0){
-           fizzString = "Fizz";
+           fizzString = "Fizz!";
      }
          else if(n % 3 != 0 && n % 5 == 0){ 
-              fizzString = "Buzz";
+              fizzString = "Buzz!";
             }
         else if( n % 3 == 0 && n % 5 == 0){ 
-            fizzString = "FizzBuzz";
+            fizzString = "FizzBuzz!";
         }
         return fizzString;
   
